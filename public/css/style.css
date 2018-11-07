@@ -1,5 +1,6 @@
 * {
     margin: 0 0;
+    outline-color: #764ba2;
     font: 400 13.3333px Arial;
 }
 
@@ -18,6 +19,7 @@ header {
     left: 0px;
     width: 220px;
     height: 100%;
+    z-index: 300;
     overflow: hidden;
     position: absolute;
     background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -69,10 +71,21 @@ header {
     left: 220px;
     width: 260px;
     height: 100%;
-    z-index: 300;
+    z-index: 100;
+    overflow: hidden;
     position: absolute;
-    background: rgb( 255, 255, 255);
+    background: transparent;
     box-shadow: 0px 0px 100px 6px rgba(80, 75, 148, 0.6);
+}
+
+#list-content::before {
+    width: 100%;
+    z-index: -1;
+    content: "";
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    background: rgba( 255, 255, 255, 0.8);
 }
 
 #list-content a {
@@ -82,10 +95,24 @@ header {
     line-height: 30px;
     padding-top: 10px;
     padding-bottom: 9px;
+    transition: all linear 0.2s;
+}
+
+#list-content a * {
+    transition: all linear 0.2s;
 }
 
 #list-content a div {
     float: left;
+}
+
+#list-content a:hover {
+    background: rgba(171, 168, 214, 0.2);
+}
+
+#list-content a:hover * {
+    color: rgba(80, 75, 148, 1);
+    border-color: rgba(80, 75, 148, 0.5) !important;
 }
 
 #list-content a div:nth-child(1) {
@@ -99,6 +126,7 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 14px 14px;
+    box-shadow: 1px 1px 7px 1px rgb(174, 163, 192);
 }
 
 #list-content a div:nth-child(2) {
