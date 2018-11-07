@@ -37,6 +37,15 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/home', (req, res, next) => {
+  Usuario.run().then((Usuarios) => {
+    res.render('home', {
+      title: 'LocationChecker',
+      Usuarios: Usuarios
+    });
+  });
+});
+
 router.get('/registro', (req, res, next) => {
   Usuario.run().then((Usuarios) => {
     res.render('registro', {
