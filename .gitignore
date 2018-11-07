@@ -1,3 +1,4 @@
 node_modules/
 .nyc_output
 .sass-cache
+rethinkdb-2.3.6/
