@@ -30,8 +30,7 @@ router.get('/insert', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   res.render('index', {
-    title: 'LocationChecker',
-    Usuarios: Usuarios
+    title: 'LocationChecker'
   });
 });
 
