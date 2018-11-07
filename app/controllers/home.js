@@ -29,11 +29,9 @@ router.get('/insert', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  Usuario.run().then((Usuarios) => {
-    res.render('index', {
-      title: 'LocationChecker',
-      Usuarios: Usuarios
-    });
+  res.render('index', {
+    title: 'LocationChecker',
+    Usuarios: Usuarios
   });
 });
 

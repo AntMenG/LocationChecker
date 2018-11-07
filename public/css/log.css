@@ -51,22 +51,21 @@
   font-size: 44px;
   line-height: 102px;
   position: absolute;
-  font-weight: 300 !important;
+  font-weight: lighter !important;
   color: #764ba2; }
 
 .name {
-  font-weight: 300;
+  font-weight: lighter;
   padding-top: 174px !important; }
 
 span {
   width: 100%;
   display: block;
   font-size: 18px;
-  font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding-top: 24px;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   position: relative;
   padding-bottom: 8px;
