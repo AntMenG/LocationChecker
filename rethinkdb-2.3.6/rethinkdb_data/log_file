@@ -108,3 +108,21 @@
 2018-11-06T23:32:43.671148800 2.140829s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: Starting a new Raft election for term 5.
 2018-11-06T23:32:43.718149100 2.188183s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 3. Latest log index is 6.
 2018-11-06T23:32:43.808948000 2.278598s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: This server is Raft leader for term 5. Latest log index is 12.
+2018-11-07T00:31:21.036936000 0.069306s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-11-07T00:31:21.037935600 0.069764s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-11-07T00:31:21.038938900 0.070831s notice: Loading data from directory C:\\Users\\anton\\Documents\\GitHub\\LocationChecker\\rethinkdb-2.3.6\\rethinkdb_data
+2018-11-07T00:31:21.334916000 0.366817s info: Automatically using cache size of 2445 MB
+2018-11-07T00:31:21.351914500 0.383809s notice: Listening for intracluster connections on port 29015
+2018-11-07T00:31:21.860882600 0.892753s notice: Listening for client driver connections on port 28015
+2018-11-07T00:31:21.860882601 0.893268s notice: Listening for administrative HTTP connections on port 8080
+2018-11-07T00:31:21.861882700 0.893324s notice: Listening on cluster address: 127.0.0.1
+2018-11-07T00:31:21.861882701 0.893328s notice: Listening on driver address: 127.0.0.1
+2018-11-07T00:31:21.861882702 0.893332s notice: Listening on http address: 127.0.0.1
+2018-11-07T00:31:21.861882703 0.893335s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-11-07T00:31:21.861882704 0.893339s notice: Server ready, "DESKTOP_QAROTCE_32b" 5575739e-a5a6-49c5-8ed8-4727450d62e0
+2018-11-07T00:31:22.852819800 1.884620s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: Starting a new Raft election for term 3.
+2018-11-07T00:31:22.962890000 1.994886s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 3. Latest log index is 6.
+2018-11-07T00:31:23.029643500 2.061567s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: Starting a new Raft election for term 5.
+2018-11-07T00:31:23.140287000 2.172515s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: This server is Raft leader for term 5. Latest log index is 12.
+2018-11-07T00:31:23.698250100 2.729898s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: Starting a new Raft election for term 3.
+2018-11-07T00:31:24.234107700 3.265800s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: This server is Raft leader for term 3. Latest log index is 7.
