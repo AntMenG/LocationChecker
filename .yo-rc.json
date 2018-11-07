@@ -1,0 +1,11 @@
+{
+  "generator-express": {
+    "promptValues": {
+      "type": "MVC",
+      "viewEngine": "Handlebars",
+      "cssPreprocessor": "None",
+      "database": "RethinkDB",
+      "buildTool": "Grunt"
+    }
+  }
+}
