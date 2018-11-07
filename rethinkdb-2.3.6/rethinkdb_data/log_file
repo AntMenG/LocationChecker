@@ -67,3 +67,26 @@
 2018-11-06T23:13:16.814076400 24432.151805s notice: All client connections closed.
 2018-11-06T23:13:16.814076401 24432.151848s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2018-11-06T23:13:16.851489600 24432.188704s notice: Storage engine shut down.
+2018-11-06T23:26:08.216045700 0.030888s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-11-06T23:26:08.216045701 0.031497s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-11-06T23:26:08.217189400 0.032737s notice: Loading data from directory C:\\Users\\anton\\Documents\\GitHub\\LocationChecker\\rethinkdb-2.3.6\\rethinkdb_data
+2018-11-06T23:26:08.302828400 0.117948s info: Automatically using cache size of 1623 MB
+2018-11-06T23:26:08.320827900 0.136215s notice: Listening for intracluster connections on port 29015
+2018-11-06T23:26:08.395818900 0.210858s notice: Listening for client driver connections on port 28015
+2018-11-06T23:26:08.396822200 0.211585s notice: Listening for administrative HTTP connections on port 8080
+2018-11-06T23:26:08.396822201 0.211600s notice: Listening on cluster address: 127.0.0.1
+2018-11-06T23:26:08.396822202 0.211685s notice: Listening on driver address: 127.0.0.1
+2018-11-06T23:26:08.396822203 0.211689s notice: Listening on http address: 127.0.0.1
+2018-11-06T23:26:08.396822204 0.211693s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-11-06T23:26:08.396822205 0.211699s notice: Server ready, "DESKTOP_QAROTCE_32b" 5575739e-a5a6-49c5-8ed8-4727450d62e0
+2018-11-06T23:26:09.559005600 1.374469s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: Starting a new Raft election for term 4.
+2018-11-06T23:26:09.624905200 1.440152s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: Starting a new Raft election for term 2.
+2018-11-06T23:26:09.685619400 1.500301s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: This server is Raft leader for term 4. Latest log index is 9.
+2018-11-06T23:26:09.728161900 1.542777s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: This server is Raft leader for term 2. Latest log index is 3.
+2018-11-06T23:26:09.876707900 1.691498s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: Starting a new Raft election for term 2.
+2018-11-06T23:26:09.941318800 1.756651s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 2. Latest log index is 3.
+2018-11-06T23:31:10.319540500 302.134885s notice: Server got Control-C; shutting down...
+2018-11-06T23:31:10.320542000 302.135990s notice: Shutting down client connections...
+2018-11-06T23:31:10.321542100 302.136807s notice: All client connections closed.
+2018-11-06T23:31:10.321542101 302.136846s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-11-06T23:31:10.357539300 302.172848s notice: Storage engine shut down.

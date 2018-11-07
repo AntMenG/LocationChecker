@@ -48,12 +48,7 @@ router.get('/registro', (req, res, next) => {
 
 router.post('/registra', (req, res, next) => {
   var params = req.body;
-  if (
-    params.id &&
-    params.nombre &&
-    params.apellido &&
-    params.password
-  ) {
+  if (params.id && params.nombre && params.apellido && params.password)
     bcrypt.genSalt(saltRounds, (err, salt) => {
       bcrypt.hash(params.password, salt, (err, hash) => {
         var registra = new Usuario({
@@ -69,9 +64,8 @@ router.post('/registra', (req, res, next) => {
         });
       });
     });
-  } else {
+  else
     res.send("Debes enviar todos loos datos");
-  }
 });
 
 router.post('/inicia', (req, res, next) => {
