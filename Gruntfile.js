@@ -33,7 +33,7 @@ module.exports = (grunt) => {
       },
       css: {
         files: [
-          'public/css/*.css'
+          'public/css/**/*.css'
         ],
         options: {
           livereload: reloadPort
@@ -41,8 +41,8 @@ module.exports = (grunt) => {
       },
       views: {
         files: [
-          'app/views/*.handlebars',
-          'app/views/**/*.handlebars'
+          'app/views/*.hbs',
+          'app/views/**/*.hbs'
         ],
         options: { livereload: reloadPort }
       }

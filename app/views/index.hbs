@@ -1,18 +1,35 @@
-  <link rel="stylesheet" href="/css/log.css">
-  <script src="/js/login.js"></script>
-    <div style="filter: blur(15px);">
-
-    </div>
-
-    <form method="POST" action="/inicia" id="logpanel">
-        <div id="layout">
-            <div id="photo">
-                <span>LC</span>
+<link rel="stylesheet" href="/css/log.css">
+<script src="/js/login.js"></script>
+<div id="space" style="filter: blur(15px);">
+    <header>
+        <div id="user">
+            <div id="title">LocationChecker</div>
+            <div id="photo-space">
+                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
             </div>
-            <input name="id" placeholder="USUARIO" type="text" required style="margin-top: 222px;">
-            <input name="password" placeholder="CONTRASEÑA" type="password" required>
-            <button id="iniciar">INGRESAR</button>
+            <div id="name-space" *ngFor="let user of users">
+                Aurelio
+                Rico Díaz
+            </div>
+            <div id="nom-space">
+                123
+            </div>
         </div>
-    </form>
+    </header>
 
-    <div id="homeSpace"></div>
+    <div id="map">
+    </div>
+</div>
+
+<form method="POST" action="/inicia" id="logpanel">
+    <div id="layout">
+        <div id="photo">
+            <span>LC</span>
+        </div>
+        <input name="id" placeholder="USUARIO" type="text" required style="margin-top: 222px;">
+        <input name="password" placeholder="CONTRASEÑA" type="password" required>
+        <button id="iniciar">INGRESAR</button>
+    </div>
+</form>
+
+<div id="homeSpace"></div>
