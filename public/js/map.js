@@ -6,7 +6,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 18,
         center: tesh,
-        mapTypeControl: false,
+        mapTypeControl: true,
         styles: [
             {
               "elementType": "geometry",
@@ -192,7 +192,7 @@ function initMap() {
         },
         zoomControl: true,
         zoomControlOptions: {
-            position: google.maps.ControlPosition.LEFT_BOTTOM
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
         },
         scaleControl: true,
         streetViewControl: false,
