@@ -3,22 +3,11 @@ const router = express.Router();
 const models = require('../models');
 const Usuario = models.Usuario;
 const bcrypt = require("bcrypt");
-const session = require('express-session')
 const saltRounds = 10;
 
 module.exports = (app) => {
   app.use('/', router);
 };
-
-router.use(session({
-  secret: 'buzzardTuTesh',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { 
-    secure: false,
-    maxAge: false
-  }
-}));
 
 router.get('/insert', (req, res, next) => {
   bcrypt.genSalt(saltRounds, (err, salt) => {

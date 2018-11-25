@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const compress = require('compression');
 const methodOverride = require('method-override');
 const exphbs  = require('express-handlebars');
+const session = require('express-session');
 
 module.exports = (app, config) => {
   const env = process.env.NODE_ENV || 'development';
@@ -42,6 +43,16 @@ module.exports = (app, config) => {
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+
+  app.use(session({
+    secret: 'buzzardTuTesh',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { 
+      secure: false,
+      maxAge: false
+    }
+  }));
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach((controller) => {
