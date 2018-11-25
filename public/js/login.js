@@ -7,7 +7,13 @@ $(function () {
                 if (data == "/") {
                     window.location = "/";
                 } else {
-                    alert(data);
+                    $('#log_notify').text(data);
+                    $('#log_notify').css('display','inherit');
+                    var myVar;
+                    myVar = setTimeout(function(){ 
+                        $('#log_notify').css('display','none');
+                        clearTimeout(myVar);
+                    }, 3000);
                 }
             }
         );

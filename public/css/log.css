@@ -12,6 +12,29 @@
   ); 
 }
 
+#layout {
+  width: 100%;
+}
+
+#log_notify {
+  width: 60%;
+  display: none;
+  padding-top: 8px;
+  margin-top: 10px;
+  padding-left: 6px;
+  margin-left: auto;
+  padding-right: 6px;
+  text-align: center;
+  margin-right: auto;
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: -18px;
+  border-radius: 4px 4px;
+  color: rgba( 242, 242, 242, 0.8);
+  background: rgba(182, 53, 107, 0.8);
+  border: solid 1px rgba(182, 53, 107, 0.8);
+}
+
 #photo {
   top: 38px;
   left: 50%;

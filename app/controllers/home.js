@@ -105,8 +105,14 @@ router.post('/inicia', (req, res, next) => {
         }
       });
     else
-      res.send("Usuario o contraseña incorrectos");
+      res.send("El usuario no existe");
   }).catch((err) => {
     res.send("No existe");
   });
+})
+
+router.post('/cs', (req, res, next) => {
+  req.session.destroy((err) => {
+    res.send("");
+  })
 })
