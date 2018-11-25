@@ -4,7 +4,11 @@ $(function () {
             $(this).attr('action'),
             $(this).serialize(),
             function (data) {
-                alert(data);
+                if (data == "/") {
+                    window.location = "/";
+                } else {
+                    alert(data);
+                }
             }
         );
         return false;
