@@ -171,3 +171,8 @@
 2018-11-25T22:44:07.682009200 138.592735s info: Table 74f3474c-feca-44ac-bc09-b8c14451d20c: Starting a new Raft election for term 1.
 2018-11-25T22:44:07.703004600 138.614064s info: Table 74f3474c-feca-44ac-bc09-b8c14451d20c: Added replica on this server.
 2018-11-25T22:44:07.988994200 138.899845s info: Table 74f3474c-feca-44ac-bc09-b8c14451d20c: This server is Raft leader for term 1. Latest log index is 0.
+2018-11-26T00:05:37.646873300 5028.557711s notice: Server got Control-C; shutting down...
+2018-11-26T00:05:37.647872900 5028.558626s notice: Shutting down client connections...
+2018-11-26T00:05:37.648872500 5028.559596s notice: All client connections closed.
+2018-11-26T00:05:37.648872501 5028.559611s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-11-26T00:05:37.767634600 5028.678277s notice: Storage engine shut down.
