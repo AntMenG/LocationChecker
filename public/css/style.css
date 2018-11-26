@@ -131,6 +131,7 @@ header #menu button:first-child {
 }
 
 header #menu button:last-child {
+    border: solid 0px !important;
     border-radius: 0px 0px 4px 4px;
 }
 
