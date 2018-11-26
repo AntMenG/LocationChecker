@@ -14,7 +14,6 @@ const Usuario = thinky.createModel('Usuario', {
 
 module.exports = Usuario;
 
-// example on how to add relations
-// var Comment = require('./comment');
-// Usuario.hasMany(Comment, 'comments', 'id', 'Usuario_id');
+var Horario = require('./horario');
+Usuario.hasMany(Horario, 'horarios', 'id', 'usuario_id');
 

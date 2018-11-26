@@ -21,3 +21,4 @@
 2018-11-25T15:37:45.552857000 178.225934s info: Table 40636af7-dfc1-499f-b738-82d5c6ddb1ff: Added replica on this server.
 2018-11-25T15:37:45.821134000 178.494211s info: Table 95567b1a-c43e-450a-a84b-d966c7fa4ceb: This server is Raft leader for term 1. Latest log index is 0.
 2018-11-25T15:37:45.888498000 178.561574s info: Table 40636af7-dfc1-499f-b738-82d5c6ddb1ff: This server is Raft leader for term 1. Latest log index is 0.
+2018-11-25T18:30:28.508396000 10541.120216s info: Table 40636af7-dfc1-499f-b738-82d5c6ddb1ff: Configuration is changing.
