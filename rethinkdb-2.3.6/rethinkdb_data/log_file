@@ -41,3 +41,8 @@
 2018-11-26T12:37:19.928901000 3.725970s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: This server is Raft leader for term 5. Latest log index is 13.
 2018-11-26T12:37:19.929262000 3.726330s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 5. Latest log index is 13.
 2018-11-26T12:37:20.120391000 3.917460s info: Table 3f9d8033-d1be-4b06-89ba-9ba5d263bf5c: This server is Raft leader for term 2. Latest log index is 3.
+2018-11-26T14:57:31.779199000 8415.539805s notice: Server got SIGINT from pid 526, uid 501; shutting down...
+2018-11-26T14:57:31.779315000 8415.539920s notice: Shutting down client connections...
+2018-11-26T14:57:31.779459000 8415.540064s notice: All client connections closed.
+2018-11-26T14:57:31.779464000 8415.540069s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-11-26T14:57:31.862761000 8415.623367s notice: Storage engine shut down.
