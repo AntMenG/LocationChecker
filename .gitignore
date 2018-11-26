@@ -2,3 +2,5 @@ node_modules/
 .nyc_output
 .sass-cache
 package-lock.json
+rethinkdb-2.3.6/
+rethinkdb_data/
