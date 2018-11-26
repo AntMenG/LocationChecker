@@ -52,6 +52,62 @@
     overflow-y: auto; 
     overflow-x: hidden;
     position: absolute;
+    text-align: center;
     background: transparent;
     width: calc(100% - 50px);
+}
+
+#actions .actions--space input,
+#actions .actions--space select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    border: solid 0px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px 2px;
+    box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
+}
+
+#actions .actions--space #prev {
+    width: 30px;
+    height: 30px;
+    border: solid 0px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px 2px;
+    box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
+}
+
+#actions #carts {
+    width: 100%;
+}
+
+#actions #carts .cart {
+    width: 220px;
+    height: 250px;
+    margin-top: 20px;
+    display: inline-block;
+    background: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px 2px;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
+}
+
+#actions #carts .cart .cart--header {
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
