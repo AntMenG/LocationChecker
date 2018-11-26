@@ -45,6 +45,22 @@
     color: rgb( 242, 242, 242);
 }
 
+#actions .header .closeP::before,
+#actions .header .closeP::after {
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 60%;
+    height: 2px;
+    position: absolute;
+    background: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+#actions .header .closeP::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
 #actions .actions--space {
     top: 0px;
     left: 50px;
