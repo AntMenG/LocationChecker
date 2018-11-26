@@ -5,7 +5,12 @@ const type = thinky.type;
 const Edificio = thinky.createModel('Edificio', {
   id: Number,
   nombre: String,
-  aula: String
+  aula: String,
+  p1: String,
+  p2: String,
+  p3: String,
+  p4: String
+
 });
 
 module.exports = Edificio;
