@@ -180,6 +180,11 @@
     height: 30px;
     line-height: 30px;
     background: transparent;
+    color: rgb( 111, 111, 111);
+}
+
+#actions #carts .cart .cart--content .item * {
+    color: rgb( 111, 111, 111);
 }
 
 #actions #carts .cart .cart--content .item:nth-child(2n) {
