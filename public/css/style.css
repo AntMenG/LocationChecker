@@ -51,6 +51,8 @@ header {
     margin: auto auto;
     padding-top: 26px;
     text-align: center;
+    margin-top: -10px;
+    margin-bottom: -5px;
     padding-bottom: 10px;
 }
 
