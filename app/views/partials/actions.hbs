@@ -35,21 +35,43 @@
                 </select>
 
                 <div id="carts">
-                    <div class="cart">
-                        <div class="cart--header"></div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart--header"></div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart--header"></div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart--header"></div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart--header"></div>
-                    </div>
+                    {{#each dias}}
+                        <div class="cart">
+                            <div class="cart--header">
+                                <div class="cart--name_day">{{nombre}}</div>
+                                <div class="cart--column">Hora</div>
+                                <div class="cart--column">Edificio</div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">7 - 8</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">8 - 9</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">9 - 10</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">10 - 11</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">11 - 12</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">12 - 13</div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="cart--content">
+                                <div class="item">13 - 14</div>
+                                <div class="item"></div>
+                            </div>
+                        </div>
+                    {{/each}}
                 </div>
 
             </form>

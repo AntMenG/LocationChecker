@@ -5,6 +5,14 @@ const Usuario = models.Usuario;
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+const days = [
+  {nombre:'Lunes'},
+  {nombre:'Martes'},
+  {nombre:'Miércoles'},
+  {nombre:'Jueves'},
+  {nombre:'Viérnes'}
+];
+
 module.exports = (app) => {
   app.use('/', router);
 };
@@ -36,6 +44,7 @@ router.get('/', (req, res, next) => {
       res.render('home', {
         title: 'LocationChecker',
         Usuarios: Usuarios,
+        dias: days,
         user: user
       });
     });
