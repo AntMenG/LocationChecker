@@ -91,6 +91,12 @@
     box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
 }
 
+#actions .actions--space input[type="submit"] {
+    width: auto;
+    color: white;
+    background: #667eea;
+}
+
 #actions .actions--space #prev {
     width: 30px;
     height: 30px;

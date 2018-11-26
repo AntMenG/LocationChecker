@@ -26,4 +26,13 @@ $( function () {
         $('#actions').css('display','none');
         $("#menu > button").removeClass("active");
     }
+
+    // Registrar Usuario
+    $("#regUsuario").on("submit", function () {
+        $.post($(this).attr('action'), $(this).serialize(), function (data) {
+            alert(data);
+        });
+        return false;
+    });
+
 });

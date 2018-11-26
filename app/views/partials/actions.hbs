@@ -11,14 +11,14 @@
         </div>
         <div class="actions--space">
             {{! Todo el código de formularios, vista, etc... aquí }}
-            <form action="/registra">
+            <form id="regUsuario" action="/registra">
                 <img id="prev" src="
                     https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250
                 " alt="">
-                <input type="text" name="id" placeholder="Número de empleado">
-                <input type="text" name="nombre" placeholder="Ingresa el nombre">
-                <input type="text" name="apellido" placeholder="Ingresa el apellido">
-                <select name="carrera" id="">
+                <input type="text" name="id" placeholder="Número de empleado" required>
+                <input type="text" name="nombre" placeholder="Ingresa el nombre" required>
+                <input type="text" name="apellido" placeholder="Ingresa el apellido" required>
+                <select name="carrera" id="" required>
                     <option value="">Carrera</option>
                     <option value="ISC">ISC</option>
                     <option value="IM">IM</option>
@@ -28,7 +28,7 @@
                     <option value="LB">LB</option>
                     <option value="G">G</option>
                 </select>
-                <select name="tipo_usuario" id="">
+                <select name="tipo_usuario" id="" required>
                     <option value="">Tipo de Usuario</option>
                     <option value="1">Administrador</option>
                     <option value="2">Empleado</option>
@@ -42,64 +42,22 @@
                                 <div class="cart--column">Hora</div>
                                 <div class="cart--column">Edificio</div>
                             </div>
-                            <div class="cart--content">
-                                <div class="item">7 - 8</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
+                            {{#each ../matutino}}
+                                <div class="cart--content">
+                                    <div class="item">{{horaI}} - 8</div>
+                                    <div class="item">
+                                        <select name="" id="">
+                                            <option value="">Edificio</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">8 - 9</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">9 - 10</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">10 - 11</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">11 - 12</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">12 - 13</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="cart--content">
-                                <div class="item">13 - 14</div>
-                                <div class="item">
-                                    <select name="" id="">
-                                        <option value="">Edificio</option>
-                                    </select>
-                                </div>
-                            </div>
+                            {{/each}}
                         </div>
                     {{/each}}
+                </div>
+
+                <div>
+                    <input type="submit" value="Registrar">
                 </div>
 
             </form>
@@ -120,7 +78,6 @@
             <input type="text" name="aula" placeholder="Aula">  
             <input type="submit" value="Registrar">
             {{! Todo el código de formularios, vista, etc... aquí }}
-            haci esta bien ? 
         </div>
     </section>
     {{! panel para administrar cuenta }}
