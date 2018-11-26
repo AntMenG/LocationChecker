@@ -220,8 +220,10 @@ header #menu button.active::after {
     overflow: auto;
     position: absolute;
     border-radius: 2px 2px;
+    box-sizing: border-box;
     background: transparent;
     height: calc(100% - 100px);
+    border: solid 1px rgb(171, 168, 190);
     box-shadow: 0px 0px 100px 6px rgba(80, 75, 148, 0.6);
 }
 
@@ -231,7 +233,7 @@ header #menu button.active::after {
 }
 #list-content::-webkit-scrollbar-thumb {
 	width: 2px !important;
-    background: rgba( 11, 11, 11, 0.6);
+    background: rgb(171, 168, 190);
 }
 
 #list-content::before {
