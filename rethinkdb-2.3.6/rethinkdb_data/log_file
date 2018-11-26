@@ -149,3 +149,29 @@
 2018-11-07T16:58:44.537617300 1.832677s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: This server is Raft leader for term 4. Latest log index is 10.
 2018-11-07T16:58:44.699712900 1.994422s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: Starting a new Raft election for term 4.
 2018-11-07T16:58:44.782447000 2.077355s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 4. Latest log index is 9.
+2018-11-25T22:51:04.151540500 0.197148s notice: In recursion: removing file 'C:\\Users\\toto_\\OneDrive\\Documentos\\GitHub\\LocationChecker\\rethinkdb-2.3.6\\rethinkdb_data\\tmp'
+2018-11-25T22:51:04.205886700 0.251699s warn: Trying to delete non-existent file 'C:\\Users\\toto_\\OneDrive\\Documentos\\GitHub\\LocationChecker\\rethinkdb-2.3.6\\rethinkdb_data\\tmp'
+2018-11-25T22:51:04.280058600 0.322881s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-11-25T22:51:04.280058601 0.323250s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-11-25T22:51:04.324490000 0.370417s notice: Loading data from directory C:\\Users\\toto_\\OneDrive\\Documentos\\GitHub\\LocationChecker\\rethinkdb-2.3.6\\rethinkdb_data
+2018-11-25T22:51:05.729207100 1.775022s info: Automatically using cache size of 100 MB
+2018-11-25T22:51:05.729207101 1.775056s warn: Cache size does not leave much memory for server and query overhead (available memory: 771 MB).
+2018-11-25T22:51:05.729207102 1.775067s warn: Cache size is very low and may impact performance.
+2018-11-25T22:51:05.863661100 1.906757s notice: Listening for intracluster connections on port 29015
+2018-11-25T22:51:06.908530900 2.952640s notice: Listening for client driver connections on port 28015
+2018-11-25T22:51:06.996521800 3.039762s notice: Listening for administrative HTTP connections on port 8080
+2018-11-25T22:51:06.996521801 3.039770s notice: Listening on cluster address: 127.0.0.1
+2018-11-25T22:51:06.996521802 3.039773s notice: Listening on driver address: 127.0.0.1
+2018-11-25T22:51:06.996521803 3.039825s notice: Listening on http address: 127.0.0.1
+2018-11-25T22:51:06.996521804 3.039829s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-11-25T22:51:06.996521805 3.039833s notice: Server ready, "DESKTOP_QAROTCE_32b" 5575739e-a5a6-49c5-8ed8-4727450d62e0
+2018-11-25T22:51:07.925351600 3.968191s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: Starting a new Raft election for term 4.
+2018-11-25T22:51:08.167767000 4.210291s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: This server is Raft leader for term 4. Latest log index is 9.
+2018-11-25T22:51:08.348167500 4.393719s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: Starting a new Raft election for term 6.
+2018-11-25T22:51:08.728976200 4.772271s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: Starting a new Raft election for term 4.
+2018-11-25T22:51:08.910316000 4.953575s info: Table 06766abd-1cf4-4c57-b4bf-a0a296192c5d: This server is Raft leader for term 6. Latest log index is 16.
+2018-11-25T22:51:09.008426900 5.053046s info: Table 759d1883-1b56-4ab1-b481-c8ac2454e778: This server is Raft leader for term 4. Latest log index is 10.
+2018-11-25T22:51:17.788177900 13.832925s info: Table 4d09d266-4ec2-428e-b6b8-f7fbb964140f: Configuration is changing.
+2018-11-25T22:51:19.914794100 15.957921s info: Table 8c9281fc-5fb3-403f-8f8d-520706bed430: Starting a new Raft election for term 1.
+2018-11-25T22:51:19.980925600 16.026018s info: Table 8c9281fc-5fb3-403f-8f8d-520706bed430: Added replica on this server.
+2018-11-25T22:51:20.306600000 16.349359s info: Table 8c9281fc-5fb3-403f-8f8d-520706bed430: This server is Raft leader for term 1. Latest log index is 0.
