@@ -73,6 +73,15 @@
     width: calc(100% - 50px);
 }
 
+.actions--space::-webkit-scrollbar {
+	width: 8px;
+	background: rgba( 255, 255, 255, 0.2);
+}
+.actions--space::-webkit-scrollbar-thumb {
+	width: 2px !important;
+    background: rgba( 11, 11, 11, 0.6);
+}
+
 #actions .actions--space input,
 #actions .actions--space select {
     width: 200px;
@@ -94,6 +103,7 @@
 #actions .actions--space input[type="submit"] {
     width: auto;
     color: white;
+    margin-bottom: 23px;
     background: #667eea;
 }
 
