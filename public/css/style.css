@@ -207,9 +207,35 @@ header #menu button.active::after {
     width: 38px;
     height: 38px;
     outline: none;
+    overflow: hidden;
     border: solid 0px;
+    position: relative;
     box-sizing: border-box;
     background: rgba(102, 51, 153, 0.1);
+}
+
+#finderEmpleados button::before {
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background: rgb(171, 168, 190);
+    transform: translate(-50%,-50%);
+}
+
+#finderEmpleados button::after {
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 18px;
+    content: "";
+    position: absolute;
+    background: transparent;
+    transform: translate(-50%,-50%);
+    border-top: solid 2px rgb(171, 168, 190);
+    border-bottom: solid 2px rgb(171, 168, 190);
 }
 
 #list-content {
