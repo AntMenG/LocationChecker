@@ -49,114 +49,21 @@
     </div>
 
     <div id="list-content">
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Marco Antonio Mendoza</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jose Carlos Jimenez Bentura</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Kevin Noe Salinas De LA</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
-        <a href="#">
-            <div id="img">
-                <img src="/upload/user_pic/avatar.jpg" alt="">
-            </div>
-            <div class="text">
-                <span>Jorge Elizalde Salmerón</span>
-                <span>123</span>
-            </div>
-        </a>
+        {{#each Usuarios}}
+            <a href="#">
+                <div id="img">
+                    {{#ifeq photo null}}
+                        <img src="/upload/user_pic/avatar.jpg" alt="">
+                        {{else}}
+                        <img src="/upload/user_pic/{{id}}.jpg" alt="">
+                    {{/ifeq}}
+                </div>
+                <div class="text">
+                    <span>{{nombre}} {{apellido}}</span>
+                    <span>{{id}}</span>
+                </div>
+            </a>
+        {{/each}}
     </div>
 
     <div id="map">
