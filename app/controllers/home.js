@@ -1,3 +1,4 @@
+var fs = require('fs');
 const express = require('express');
 const router = express.Router();
 const models = require('../models');
@@ -77,15 +78,6 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/registro', (req, res, next) => {
-  Usuario.run().then((Usuarios) => {
-    res.render('registro', {
-      title: 'LocationChecker | registro',
-      Usuarios: Usuarios
-    });
-  });
-});
-
 router.post('/registra', (req, res, next) => {
   var params = req.body;
   if (params.id && params.nombre && params.apellido && params.tipo_usuario && params.carrera)
@@ -130,7 +122,32 @@ router.post('/inicia', (req, res, next) => {
   }).catch((err) => {
     res.send("No existe");
   });
-})
+});
+
+router.post('/photo', (req, res, next) => {
+  if(req.session.user) {
+    var img = req.body.image;
+    var data = img.replace(/^data:image\/\w+;base64,/, "");
+    var buf = new Buffer(data, 'base64');
+    var id_u =req.session.user.id;
+    fs.writeFileSync(`public/upload/user_pic/${id_u}.jpg`, buf);
+    Usuario
+    .get(req.session.user.id)
+    .getJoin().run().then(function(user) {
+      user.photo = true;
+      req.session.user.photo = true;
+      user.saveAll().then(function(user) {
+        res.send("Listo");
+      }).catch(function(error){
+        res.send(error);
+        console.log(error);
+      });
+
+    });
+  } else {
+    res.send("Error");
+  }
+});
 
 router.post('/cs', (req, res, next) => {
   req.session.destroy((err) => {

@@ -9,7 +9,8 @@ const Usuario = thinky.createModel('Usuario', {
   password: String,
   tipo_usuario: Number,
   phone_id: String,
-  carrera: String
+  carrera: String,
+  photo: Boolean
 });
 
 module.exports = Usuario;

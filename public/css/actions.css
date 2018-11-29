@@ -1,3 +1,96 @@
+#Photo_panel {
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+    display: none;
+    position: absolute;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 31, 32, 0.7) 0%,
+        rgba(14, 20, 34, 0.7) 100%
+    );
+  }
+  
+#fot{
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: rgb( 53, 57, 63);
+    box-shadow: 0px 0px 0px rgba( 1, 1, 1, 0);
+}
+.cropit-preview-image-container {
+    cursor: move;
+}
+.image-size-label {
+    margin-top: -10px;
+}
+#CI {
+    left: 20px;
+    top: 172px;
+    height: 30px;
+    width: 180px;
+    outline: none;
+    font-weight: bold;
+    border: solid 0px;
+    position: absolute;
+    border-radius: 4px 4px;
+    background: rgb(220, 220, 220);
+    color: rgb( 53, 57, 63);
+}
+#CCI{
+    display: none;
+}
+input[type="range"]{
+    left: 20px;
+    top: 155px;
+    height: 5px;
+    width: 180px;
+    border: none;
+    outline: none;
+    display: block;
+    position: absolute;
+    padding: 1px 2px;
+    border-radius: 14px;
+    background: rgba( 33, 33, 33, 0.8);
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 12px;
+    background: rgb(206, 210, 216);
+}
+input[type="range"]::-moz-range-thumb {
+    width: 40px;
+    height: 18px;
+    border: none;
+    border-radius: 12px;
+}  
+input[type="range"]::-ms-thumb {
+    width: 40px;
+    height: 18px;
+    border-radius: 12px;
+    border: 0;
+}
+#send-photo {
+    top: 20px;
+    left: 132px;
+    height: 30px;
+    width: 70px;
+    display: block;
+    font-weight: bold;
+    border: solid 0px;
+    position: absolute;
+    color: rgb( 255, 255, 255);
+    background: rgba( 76, 146, 228, 0.9);
+}
+
+
 #actions {
     top: 0px;
     right: 0px;

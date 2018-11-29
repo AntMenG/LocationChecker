@@ -1,3 +1,4 @@
+<script src="/js/cropit.js"></script>
 <script src="/js/actions.js"></script>
 {{> actions}}
 <header>
@@ -5,8 +6,15 @@
         <div id="title">
             <img src="/icon/LocationCheckerTitlte.png" width="100%" alt="">
         </div>
-        <div id="photo-space">
-            <img id="photo_user" src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+        <div id="photo-space" data-pic="/upload/user_pic/{{user.id}}.jpg">
+            {{#ifeq user.photo null}}
+                <img id="photo_user" src="/upload/user_pic/avatar.jpg" alt="">
+                {{else }}
+                <img id="photo_user" src="/upload/user_pic/{{user.id}}.jpg" alt="">
+            {{/ifeq}}
+            <button id="select_photo">
+                <img src="/icon/camera.png" alt="">
+            </button>
         </div>
         <div id="name-space">
             <script>
@@ -43,7 +51,7 @@
     <div id="list-content">
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -52,7 +60,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Marco Antonio Mendoza</span>
@@ -61,7 +69,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jose Carlos Jimenez Bentura</span>
@@ -70,7 +78,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Kevin Noe Salinas De LA</span>
@@ -79,7 +87,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -88,7 +96,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -97,7 +105,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -106,7 +114,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -115,7 +123,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -124,7 +132,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -133,7 +141,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
@@ -142,7 +150,7 @@
         </a>
         <a href="#">
             <div id="img">
-                <img src="https://i0.wp.com/www.maquinas-de-afeitar.com/wp-content/uploads/barba.jpg?resizeu003d250%2C250" alt="">
+                <img src="/upload/user_pic/avatar.jpg" alt="">
             </div>
             <div class="text">
                 <span>Jorge Elizalde Salmerón</span>
