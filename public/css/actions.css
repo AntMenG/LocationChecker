@@ -190,6 +190,7 @@ input[type="range"]::-ms-thumb {
     display: inline-block;
     box-sizing: border-box;
     border-radius: 2px 2px;
+    background: rgb( 242, 242, 242);
     box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
 }
 

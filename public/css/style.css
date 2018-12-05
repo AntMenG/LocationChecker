@@ -209,9 +209,9 @@ header #menu button.active::after {
 }
 
 #finderEmpleados::before {
-    width: 100%;
     z-index: -1;
     content: "";
+    width: 260px;
     height: 40px;
     position: fixed;
     backdrop-filter: blur(10px);
@@ -295,7 +295,7 @@ header #menu button.active::after {
     z-index: -1;
     content: "";
     height: 100%;
-    position: fixed;
+    position: absolute;
     backdrop-filter: blur(10px);
     background: rgba( 255, 255, 255, 0.8);
 }
