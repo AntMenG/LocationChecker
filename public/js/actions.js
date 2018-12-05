@@ -91,13 +91,16 @@ $( function () {
     $("#regUsuario").on("submit", function () {
         $("#regUsuario input[type='submit']").attr("disabled", true);
         var horario = [];
+        // Selecciona un elemento input o select
         function input (string) {
             var input = "#regUsuario [name='" + string + "']";
             return input;
         }
+        // Selecciona todos los select corespondientes a horario
         var h = $("#regUsuario .horario");
         h.each(function( item ) {
             if ($(this).val()) {
+                // Crea el JSON Array de horario
                 var datos = $(this).attr('name');
                 datos = datos.split('_');
                 var json = {
@@ -109,6 +112,7 @@ $( function () {
                 horario.push(json);
             }
         });
+        // Asignamos datos de usuario a enviar
         var datos = {
             id: $(input('id')).val(),
             nombre: $(input('nombre')).val(),
@@ -117,6 +121,7 @@ $( function () {
             tipo_usuario: $(input('tipo_usuario')).val(),
             horario
         };
+        // Enviamos todo a la ruta 
         $.post($(this).attr('action'), datos, function (data) {
             var response = JSON.parse(data);
             if (response.status == "done") {
