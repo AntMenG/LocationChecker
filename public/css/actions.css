@@ -179,17 +179,19 @@ input[type="range"]::-ms-thumb {
 #actions .actions--space select {
     width: 200px;
     height: 30px;
-    padding-left: 10px;
+    margin-top: 20px;
     border: solid 0px;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-right: 20px;
+    text-align: center;
     padding-right: 10px;
     padding-bottom: 2px;
     vertical-align: top;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
     display: inline-block;
     box-sizing: border-box;
     border-radius: 2px 2px;
+    text-align-last:center;
     background: rgb( 242, 242, 242);
     box-shadow: 5px 5px 20px 3px rgba(62, 35, 109, 0.3);
 }

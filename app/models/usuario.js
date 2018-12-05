@@ -17,4 +17,3 @@ module.exports = Usuario;
 
 var Horario = require('./horario');
 Usuario.hasMany(Horario, 'horarios', 'id', 'usuario_id');
-

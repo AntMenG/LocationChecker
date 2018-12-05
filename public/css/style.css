@@ -221,8 +221,8 @@ header #menu button.active::after {
 #finderEmpleados input[type="text"] {
     float: left;
     width: 219px;
-    height: 38px;
     outline: none;
+    height: 36.5px;
     border: solid 0px;
     padding-left: 10px;
     padding-right: 10px;
