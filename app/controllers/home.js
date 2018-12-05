@@ -60,7 +60,10 @@ router.get('/insert', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   var user = req.session.user;
-  if (user && user.tipo_usuario == 1)
+  if (
+    (user && user.tipo_usuario == 1) ||
+    (user && user.tipo_usuario == 2)
+  )
     //Ventana de usuario registrado
     Usuario.run().then((Usuarios) => {
       res.render('home', {
