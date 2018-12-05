@@ -26,7 +26,7 @@
             </script>
         </div>
         <div id="nom-space">
-            {{user.id}}
+            {{user.uid}}
         </div>
     </div>
 
@@ -50,7 +50,7 @@
 
     <div id="list-content">
         {{#each Usuarios}}
-            <a href="#">
+            <a href="/usuario/{{uid}}">
                 <div id="img">
                     {{#ifeq photo null}}
                         <img src="/upload/user_pic/avatar.jpg" alt="">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="text">
                     <span>{{nombre}} {{apellido}}</span>
-                    <span>{{id}}</span>
+                    <span>{{uid}}</span>
                 </div>
             </a>
         {{/each}}

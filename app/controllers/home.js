@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const models = require('../models');
 const Usuario = models.Usuario;
+const Horario = models.Horario;
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -42,7 +43,7 @@ router.get('/insert', (req, res, next) => {
   bcrypt.genSalt(saltRounds, (err, salt) => {
     bcrypt.hash('12tesh', salt, (err, hash) => {
       var registra = new Usuario({
-        id: 1,
+        uid: 1,
         nombre: 'Majocama',
         apellido: 'Sabritas',
         password: hash,
@@ -84,27 +85,63 @@ router.post('/registra', (req, res, next) => {
     bcrypt.genSalt(saltRounds, (err, salt) => {
       bcrypt.hash(params.id, salt, (err, hash) => {
         var registra = new Usuario({
-          id: params.id,
+          uid: params.id,
+          password: hash,
           nombre: params.nombre,
           apellido: params.apellido,
-          tipo_usuario: params.tipo_usuario,
-          password: hash
+          carrera: params.carrera,
+          tipo_usuario: params.tipo_usuario
         });
         registra.saveAll().then((usuario) => {
-          res.send("Registrado!!!");
+          if (usuario) {
+            if (params.horario) {
+              params.horario.map(function(a) {
+                a.usuario_id = usuario.id;
+              })
+              console.log(params);
+              Horario.save(params.horario).then(function(result) {
+                res.send(`{
+                  "status" : "done",
+                  "text" : "¡¡¡Registrado!!!"
+                }`);
+              }).error(function(error) {
+                res.send(`{
+                  "status" : "err",
+                  "text" : "Error al registrar horarios"
+                }`);
+              });
+            } else {
+              res.send(`{
+                "status" : "done",
+                "text" : "¡¡¡Registrado!!!"
+              }`);
+            }
+          } else {
+            res.send(`{
+              "status" : "err",
+              "text" : "Error al registrar usuario"
+            }`);
+          }            
         }).catch((err) => {
-          res.send("Error al registrar");
+          res.send(`{
+            "status" : "err",
+            "text" : "¡¡¡Error!!!"
+          }`);
+          console.log(err);
         });
       });
     });
   else
-    res.send("Debes enviar todos loos datos");
+    res.send(`{
+      "status" : "err",
+      "text" : "Debes enviar todos los datos"
+    }`);
 });
 
 router.post('/inicia', (req, res, next) => {
   var params = req.body;
   Usuario.filter({
-    id : Number(params.id)
+    uid : Number(params.id)
   }).run().then((usuario) => {
     if (usuario[0])
       bcrypt.compare(params.password, usuario[0].password, (err, response) => {
@@ -129,11 +166,11 @@ router.post('/photo', (req, res, next) => {
     var img = req.body.image;
     var data = img.replace(/^data:image\/\w+;base64,/, "");
     var buf = new Buffer(data, 'base64');
-    var id_u =req.session.user.id;
+    var id_u = req.session.user.id;
     fs.writeFileSync(`public/upload/user_pic/${id_u}.jpg`, buf);
-    Usuario
-    .get(req.session.user.id)
-    .getJoin().run().then(function(user) {
+    Usuario.get(id_u)
+    //.getJoin()
+    .run().then(function(user) {
       user.photo = true;
       req.session.user.photo = true;
       user.saveAll().then(function(user) {

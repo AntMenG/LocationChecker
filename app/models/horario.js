@@ -4,9 +4,9 @@ const r = thinky.r;
 const type = thinky.type;
 
 const Horario = thinky.createModel('Horario', {
-  usuario_id: Number,
-  hora: Date,
-  dia: Number,
+  usuario_id: String,
+  hora: String,
+  dia: String,
   edificio: String
 });
 

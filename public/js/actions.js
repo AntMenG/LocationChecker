@@ -89,9 +89,56 @@ $( function () {
 
     // Registrar Usuario
     $("#regUsuario").on("submit", function () {
-        $.post($(this).attr('action'), $(this).serialize(), function (data) {
-            alert(data);
+        $("#regUsuario input[type='submit']").attr("disabled", true);
+        var horario = [];
+        function input (string) {
+            var input = "#regUsuario [name='" + string + "']";
+            return input;
+        }
+        var h = $("#regUsuario .horario");
+        h.each(function( item ) {
+            if ($(this).val()) {
+                var datos = $(this).attr('name');
+                datos = datos.split('_');
+                var json = {
+                    usuario_id: $(input('id')).val(),
+                    hora: datos[1],
+                    dia: datos[0],
+                    edificio: $(this).val()
+                }
+                horario.push(json);
+            }
         });
+        var datos = {
+            id: $(input('id')).val(),
+            nombre: $(input('nombre')).val(),
+            apellido: $(input('apellido')).val(),
+            carrera: $(input('carrera')).val(),
+            tipo_usuario: $(input('tipo_usuario')).val(),
+            horario
+        };
+        $.post($(this).attr('action'), datos, function (data) {
+            var response = JSON.parse(data);
+            if (response.status == "done") {
+                $("#list-content").append(`
+                    <a href="/usuario/${datos.id}">
+                        <div id="img">
+                            <img src="/upload/user_pic/avatar.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <span>${datos.nombre} ${datos.apellido}</span>
+                            <span>${datos.id}</span>
+                        </div>
+                    </a>
+                `);
+                $("#regUsuario .horario").val('');
+                $("#regUsuario input[type='text']").val('');
+                $("#regUsuario input[type='number']").val('');
+                $("#regUsuario input[type='select']").val('');
+            }            
+            alert(response.text);
+        });
+        $("#regUsuario input[type='submit']").attr("disabled", false);
         return false;
     });
 
