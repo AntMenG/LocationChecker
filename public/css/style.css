@@ -274,7 +274,7 @@ header #menu button.active::after {
     border-radius: 2px 2px;
     box-sizing: border-box;
     background: transparent;
-    height: calc(100% - 55px);
+    max-height: calc(100% - 55px);
     box-shadow: 1px 1px 5px 0px rgba(80, 75, 148, 0.4);
 }
 
@@ -349,6 +349,10 @@ header #menu button.active::after {
     width: calc(100% - 75px);
     color: rgb( 96, 96, 96);
     border-bottom: solid 1px rgb( 166, 166, 166);
+}
+
+#list-content a:last-child div:nth-child(2) {
+    border-bottom: solid 0px rgb( 166, 166, 166);
 }
 
 #list-content a div:nth-child(2) span:nth-child(1) {
