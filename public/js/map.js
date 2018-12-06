@@ -212,7 +212,7 @@ function initMap() {
         center: tesh,
         radius: 170
     });
-    */
+    
     // Edificio I
     var eiCoords = [
         {lat: 19.408845, lng: -99.317095},
@@ -344,11 +344,44 @@ function initMap() {
         text: 'B'
     });
     eB.setMap(map);
+    */
 
     marker = new google.maps.Marker({
         position: {lat: 1, lng: -1},
         map: map,
         title: 'Profesor'
+    });
+
+    var drawingManager = new google.maps.drawing.DrawingManager({
+      //drawingMode: google.maps.drawing.OverlayType.POLYGON,
+      drawingControl: true,
+      drawingControlOptions: {
+        position: google.maps.ControlPosition.TOP_CENTER,
+        drawingModes: ['polygon']
+      },
+      polygonOptions: {
+        strokeColor: '#764ba2',
+        strokeOpacity: 0.80,
+        strokeWeight: 2,
+        fillColor: '#764ba2',
+        fillOpacity: 0.65,
+        text: 'B'
+      }
+    });
+    drawingManager.setMap(map);
+
+    google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+      var JSONPath = [];
+      var coordStr = "";
+      for (var i = 0; i < polygon.getPath().getLength(); i++) {
+        coordStr = polygon.getPath().getAt(i).toUrlValue(6);
+        var coords = coordStr.split(",");
+        JSONPath.push({
+          lat: coords[0], lng: coords[1]
+        });
+      }
+      coordPlane = JSON.stringify(JSONPath);
+      document.getElementById("coordI").value = coordPlane;
     });
     
 }

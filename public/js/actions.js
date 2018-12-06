@@ -70,8 +70,18 @@ $( function () {
     $("#menu > button").on('click', function () {
         var panel = $(this).attr('data-action');
         $("#menu > button").removeClass("active");
+        if (panel != "regEP") {
+            $("#space").addClass('blur');
+            $("#list-content").css('display','block');
+            $("#finderEmpleados").css('display','block');
+            $("#actions").removeClass("actionsEdif");
+        } else {
+            $("#list-content").css('display','none');
+            $("#finderEmpleados").css('display','none');
+            $("#space").removeClass('blur');
+            $("#actions").addClass("actionsEdif");
+        }
         $(this).addClass('active');
-        $("#space").addClass('blur');
         $('#actions').css('display','block');
         $('#actions > section').css('display','none');
         $('#actions #' + panel).css('display','block');
@@ -85,6 +95,8 @@ $( function () {
         $('#actions').css('display','none');
         $("#Photo_panel").css('display','none');
         $("#menu > button").removeClass("active");
+        $("#list-content").css('display','block');
+        $("#finderEmpleados").css('display','block');
     }
 
     // Registrar Usuario
@@ -144,6 +156,20 @@ $( function () {
             alert(response.text);
         });
         $("#regUsuario input[type='submit']").attr("disabled", false);
+        return false;
+    });
+
+    // Registrar Edificio
+    $("#regEdificio").on("submit", function () {
+        var name = $("input[name='enombre']").val();
+        var coords = $("#coordI").val();
+        if (name) {
+            if (!coords) {
+                alert("No has seleccionado un edificio");
+            } else {
+
+            }
+        }
         return false;
     });
 
