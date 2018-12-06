@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const models = require('../models');
 const Usuario = models.Usuario;
+const Edificio = models.Edificio;
 const bcrypt = require("bcrypt");
 
 const days = [
@@ -45,19 +46,26 @@ router.get('/', (req, res, next) => {
   )
     //Ventana de usuario registrado
     Usuario.run().then((Usuarios) => {
-      res.render('home', {
-        title: 'LocationChecker',
-        Usuarios: Usuarios,
-        dias: days,
-        matutino: matutino,
-        vespertino: vespertino,
-        user: user
+      Edificio.run().then((Edificios) => {
+        res.render('home', {
+          title: 'LocationChecker',
+          Usuarios: Usuarios,
+          Edificios: Edificios,
+          EdificiosStr: JSON.stringify(Edificios),
+          dias: days,
+          matutino: matutino,
+          vespertino: vespertino,
+          user: user
+        });
       });
     });
   else
     //Ventana de login
-    res.render('index', {
-      title: 'LocationChecker'
+    Edificio.run().then((Edificios) => {
+      res.render('index', {
+        title: 'LocationChecker',
+        EdificiosStr: JSON.stringify(Edificios),
+      });
     });
 });
 

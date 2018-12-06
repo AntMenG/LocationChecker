@@ -4,7 +4,7 @@ const type = thinky.type;
 
 const Edificio = thinky.createModel('Edificio', {
   nombre: String,
-  coords: []
+  coordenadas: []
 });
 
 module.exports = Edificio;

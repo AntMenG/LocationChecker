@@ -3,6 +3,7 @@ const router = express.Router();
 const models = require('../models');
 const Usuario = models.Usuario;
 const Horario = models.Horario;
+const Edificio = models.Edificio;
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -87,3 +88,33 @@ router.post('/registra', (req, res, next) => {
         "text" : "Debes enviar todos los datos"
       }`);
   });
+
+
+
+router.post('/registraEdificio', (req, res, next) => {
+  let params = req.body;
+  let nombre = params.nombre,
+      coordenadas = JSON.parse(params.coordenadas);
+  if (nombre && coordenadas) {
+    var registra = new Edificio({
+      nombre,
+      coordenadas
+    });
+    registra.saveAll().then((edificio) => {  
+      res.send(`{
+        "status" : "done",
+        "text" : "¡¡¡Edificio ${edificio.nombre} registrado!!!"
+      }`);
+    }).catch((err) => {
+      res.send(`{
+        "status" : "err",
+        "text" : "¡¡¡Error!!!"
+      }`);
+    });
+  } else {
+    res.send(`{
+      "status" : "err",
+      "text" : "Debes enviar todos los datos"
+    }`);
+  }
+});

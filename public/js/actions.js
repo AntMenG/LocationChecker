@@ -161,13 +161,22 @@ $( function () {
 
     // Registrar Edificio
     $("#regEdificio").on("submit", function () {
-        var name = $("input[name='enombre']").val();
-        var coords = $("#coordI").val();
-        if (name) {
-            if (!coords) {
+        var nombre = $("input[name='enombre']").val();
+        var coordenadas = $("#coordI").val();
+        if (nombre) {
+            if (!coordenadas) {
                 alert("No has seleccionado un edificio");
             } else {
-
+                $.post($(this).attr('action'), {
+                    nombre,
+                    coordenadas
+                }, function (data) {
+                    var response = JSON.parse(data);
+                    if (response.status == "done") {
+                        // some action
+                    } 
+                    alert(response.text);
+                });
             }
         }
         return false;

@@ -346,6 +346,29 @@ function initMap() {
     eB.setMap(map);
     */
 
+    var dataEdificios = document.getElementById("json").innerText;
+    dataEdificios.replace(" ","");
+    var jsonE = JSON.parse(dataEdificios);
+
+    for (var i = 0; i < jsonE.length; i++) {
+      for (var j = 0; j < jsonE[i].coordenadas.length; j++) {
+        jsonE[i].coordenadas[j].lat = Number(jsonE[i].coordenadas[j].lat);
+        jsonE[i].coordenadas[j].lng = Number(jsonE[i].coordenadas[j].lng);
+      }
+      var ebCoords = jsonE[i].coordenadas;
+
+      var eB = new google.maps.Polygon({
+          paths: ebCoords,
+          strokeColor: '#000000',
+          strokeOpacity: 0.05,
+          strokeWeight: 2,
+          fillColor: '#764ba2',
+          fillOpacity: 0.65,
+          text: 'B'
+      });
+      eB.setMap(map);
+    }
+
     marker = new google.maps.Marker({
         position: {lat: 1, lng: -1},
         map: map,

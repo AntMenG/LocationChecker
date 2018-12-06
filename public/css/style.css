@@ -193,8 +193,8 @@ header #menu button.active::after {
 }
 
 #finderEmpleados {
-    top: 10px;
-    left: 230px;
+    top: 5px;
+    left: 225px;
     width: 260px;
     z-index: 400;
     height: 40px;
@@ -203,8 +203,7 @@ header #menu button.active::after {
     box-sizing: border-box;
     border-radius: 2px 2px;
     background: transparent;
-    border: solid 1px rgb(171, 168, 190);
-    box-shadow: 0px 0px 30px 0px rgba(80, 75, 148, 0.6);
+    box-shadow: 1px 1px 2px 0px rgba(80, 75, 148, 0.4);
 }
 
 #finderEmpleados::before {
@@ -219,9 +218,9 @@ header #menu button.active::after {
 
 #finderEmpleados input[type="text"] {
     float: left;
-    width: 219px;
+    width: 220px;
     outline: none;
-    height: 36.5px;
+    height: 38px;
     border: solid 0px;
     padding-left: 10px;
     padding-right: 10px;
@@ -231,8 +230,8 @@ header #menu button.active::after {
 
 #finderEmpleados button {
     float: left;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     outline: none;
     overflow: hidden;
     border: solid 0px;
@@ -266,8 +265,8 @@ header #menu button.active::after {
 }
 
 #list-content {
-    top: 60px;
-    left: 230px;
+    top: 50px;
+    left: 225px;
     width: 260px;
     z-index: 300;
     overflow: auto;
@@ -275,9 +274,8 @@ header #menu button.active::after {
     border-radius: 2px 2px;
     box-sizing: border-box;
     background: transparent;
-    height: calc(100% - 70px);
-    border: solid 1px rgb(171, 168, 190);
-    box-shadow: 0px 0px 100px 6px rgba(80, 75, 148, 0.6);
+    height: calc(100% - 55px);
+    box-shadow: 1px 1px 5px 0px rgba(80, 75, 148, 0.4);
 }
 
 #list-content::-webkit-scrollbar {
@@ -307,6 +305,10 @@ header #menu button.active::after {
     padding-top: 10px;
     padding-bottom: 9px;
     transition: all linear 0.2s;
+}
+
+#list-content a:nth-child(2n) {
+    background: rgba( 220, 220, 220, 0.2);
 }
 
 #list-content a * {
