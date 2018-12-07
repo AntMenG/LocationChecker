@@ -3,6 +3,7 @@
   left: 0px;
   width: 400px;
   height: 100%;
+  z-index: 900;
   position: absolute;
   background: rgba(118, 75, 162, 0);
   background-image: linear-gradient(
