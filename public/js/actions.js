@@ -156,7 +156,7 @@ $( function () {
                 $("#regUsuario .horario").val('');
                 $("#regUsuario input[type='text']").val('');
                 $("#regUsuario input[type='number']").val('');
-                $("#regUsuario input[type='select']").val('');
+                $("#regUsuario select").val('');
             }            
             alert(response.text);
         });
