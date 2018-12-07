@@ -90,10 +90,11 @@
         </div>
         <div class="actions--space">
             <form id="regEdificio" action="/registraEdificio">
-                <input type="text" name="enombre" required placeholder="Nombre/Letra">
+                <input type="text" id="enombre" name="enombre" required placeholder="Nombre/Letra">
                 <input type="text" id="coordI" disabled name="coordenadas" placeholder="Coordenadas">  
-                <input type="submit" value="Registrar">
-            </form>
+                <input type="submit" id="forEdif" value="Registrar">
+            </form>            
+            <button id="dEdificio">Eliminar</button>
             {{! Todo el código de formularios, vista, etc... aquí }}
         </div>
     </section>

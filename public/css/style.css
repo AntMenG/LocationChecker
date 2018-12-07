@@ -4,6 +4,30 @@
     font: 400 13.3333px Arial;
 }
 
+#buzzard {
+    top: 0px;
+    right: 0px;
+    width: 130px;
+    height: 42px;
+    position: absolute;
+    text-align: center;
+    transition: transform linear 0.3s;
+    border-radius: 0px 0px 0px 2px;
+    background: rgb( 255, 255, 255);
+    box-shadow: 1px 1px 2px 0px rgba(80, 75, 148, 0.4);
+}
+
+#buzzard img {
+    height: 30px;
+    opacity: 0.6;
+    margin-top: 5.5px;
+    margin-right: -6px;
+}
+
+.buzzard-hide {
+    transform: translate(100%);
+}
+
 .blur {
     filter: blur(8px);
 }
@@ -33,6 +57,17 @@ header {
     overflow: hidden;
     position: absolute;
     background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#map::before {
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    content: "";
+    height: 100%;
+    z-index: 300;
+    position: absolute;
+    box-shadow: 0px 0px 300px 100px rgba(41, 50, 90, 0.2);
 }
 
 #user {
@@ -203,17 +238,8 @@ header #menu button.active::after {
     box-sizing: border-box;
     border-radius: 2px 2px;
     background: transparent;
+    background: rgba( 255, 255, 255, 1);
     box-shadow: 1px 1px 2px 0px rgba(80, 75, 148, 0.4);
-}
-
-#finderEmpleados::before {
-    z-index: -1;
-    content: "";
-    width: 260px;
-    height: 40px;
-    position: fixed;
-    backdrop-filter: blur(10px);
-    background: rgba( 255, 255, 255, 0.8);
 }
 
 #finderEmpleados input[type="text"] {
@@ -268,13 +294,14 @@ header #menu button.active::after {
     top: 50px;
     left: 225px;
     width: 260px;
-    z-index: 300;
+    z-index: 400;
     overflow: auto;
     position: absolute;
     border-radius: 2px 2px;
     box-sizing: border-box;
     background: transparent;
     max-height: calc(100% - 55px);
+    background: rgba( 255, 255, 255, 1);
     box-shadow: 1px 1px 5px 0px rgba(80, 75, 148, 0.4);
 }
 
@@ -285,16 +312,6 @@ header #menu button.active::after {
 #list-content::-webkit-scrollbar-thumb {
 	width: 2px !important;
     background: rgb(171, 168, 190);
-}
-
-#list-content::before {
-    width: 100%;
-    z-index: -1;
-    content: "";
-    height: 100%;
-    position: absolute;
-    backdrop-filter: blur(10px);
-    background: rgba( 255, 255, 255, 0.8);
 }
 
 #list-content a {

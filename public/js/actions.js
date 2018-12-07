@@ -72,14 +72,17 @@ $( function () {
         $("#menu > button").removeClass("active");
         if (panel != "regEP") {
             $("#space").addClass('blur');
+            $("#buzzard").addClass("blur");
             $("#list-content").css('display','block');
             $("#finderEmpleados").css('display','block');
             $("#actions").removeClass("actionsEdif");
+            $("#buzzard").removeClass("buzzard-hide");
         } else {
             $("#list-content").css('display','none');
             $("#finderEmpleados").css('display','none');
             $("#space").removeClass('blur');
             $("#actions").addClass("actionsEdif");
+            $("#buzzard").addClass("buzzard-hide");
         }
         $(this).addClass('active');
         $('#actions').css('display','block');
@@ -92,10 +95,12 @@ $( function () {
     });
     function closeP () {
         $("#space").removeClass('blur');
+        $("#buzzard").removeClass("blur");
         $('#actions').css('display','none');
         $("#Photo_panel").css('display','none');
         $("#menu > button").removeClass("active");
         $("#list-content").css('display','block');
+        $("#buzzard").removeClass("buzzard-hide");
         $("#finderEmpleados").css('display','block');
     }
 

@@ -123,6 +123,21 @@ input[type="range"]::-ms-thumb {
     width: calc(100% - 50px);
 }
 
+.actionsEdif .actions--space input,
+.actionsEdif .actions--space select,
+.actionsEdif .actions--space button {
+    z-index: 300 !important;
+    height: 31px !important;
+    margin-top: 5px !important;
+    margin-left: 5px !important;
+    position: relative !important;
+    width: calc(100% - 10px) !important;
+    box-shadow: 1px 1px 2px 0px rgba(40, 40, 41, 0.3) !important;
+}
+.actionsEdif .actions--space input[type="text"] {
+    background: rgb( 250, 250, 250) !important;
+}
+
 #actions > section {
     width: 100%;
     height: 100%;
@@ -197,7 +212,8 @@ input[type="range"]::-ms-thumb {
 }
 
 #actions .actions--space input,
-#actions .actions--space select {
+#actions .actions--space select,
+#actions .actions--space button {
     width: 200px;
     height: 30px;
     margin-top: 20px;
@@ -222,6 +238,14 @@ input[type="range"]::-ms-thumb {
     color: white;
     margin-bottom: 23px;
     background: #667eea;
+}
+
+#actions .actions--space #dEdificio {
+    width: auto;
+    display: none;
+    color: white;
+    margin-top: -18px !important;
+    background: #cc5666;
 }
 
 #actions .actions--space #prev {

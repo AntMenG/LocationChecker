@@ -201,150 +201,6 @@ function initMap() {
         },
         fullscreenControl: false
     });
-    /*
-    var cityCircle = new google.maps.Circle({
-        strokeColor: '#764ba2',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.35,
-        map: map,
-        center: tesh,
-        radius: 170
-    });
-    
-    // Edificio I
-    var eiCoords = [
-        {lat: 19.408845, lng: -99.317095},
-        {lat: 19.409010, lng: -99.316719},
-        {lat: 19.408817, lng: -99.316623},
-        {lat: 19.408653, lng: -99.317001}
-    ];19.409455, -99.316025
-
-    var eI = new google.maps.Polygon({
-        paths: eiCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'I'
-    });
-    eI.setMap(map);
-    // Edificio A
-    var eaCoords = [
-        {lat: 19.409455, lng: -99.316025},
-        {lat: 19.409627, lng: -99.315636},
-        {lat: 19.409819, lng: -99.315735},
-        {lat: 19.409647, lng: -99.316121}
-    ];
-
-    var eA = new google.maps.Polygon({
-        paths: eaCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'A'
-    });
-    eA.setMap(map);
-    
-    // Edificio G
-    var egCoords = [
-        {lat: 19.409396, lng: -99.316841},
-        {lat: 19.409525, lng: -99.316575},
-        {lat: 19.409756, lng: -99.316701},
-        {lat: 19.409629, lng: -99.316966}, 
-    ];
-
-    var eG = new google.maps.Polygon({
-        paths: egCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'G'
-    });
-    eG.setMap(map);
-
-    // Edificio F
-    var efCoords = [
-        {lat: 19.410114, lng: -99.316298},
-        {lat: 19.410264, lng: -99.315921},
-        {lat: 19.410482, lng: -99.316019},
-        {lat: 19.410332, lng: -99.316395}
-    ];
-
-    var eF = new google.maps.Polygon({
-        paths: efCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'F'
-    });
-    eF.setMap(map);
-
-    // Edificio H
-    var ehCoords = [
-        {lat: 19.410327, lng: -99.315809}, 
-        {lat: 19.410487, lng: -99.315341},
-        {lat: 19.410693, lng: -99.315421},
-        {lat: 19.410532, lng: -99.315889}
-    ];
-
-    var eH = new google.maps.Polygon({
-        paths: ehCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'H'
-    });
-    eH.setMap(map);
-
-    // Edificio C
-    var ecCoords = [
-        {lat: 19.409894, lng: -99.315590}, 
-        {lat: 19.410008, lng: -99.315331},
-        {lat: 19.409895, lng: -99.315277},
-        {lat: 19.409778, lng: -99.315544}
-    ];
-
-    var eC = new google.maps.Polygon({
-        paths: ecCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'C'
-    });
-    eC.setMap(map);
-
-    // Edificio B
-    var ebCoords = [
-        {lat: 19.409165, lng: -99.317231}, 
-        {lat: 19.409292, lng: -99.316949},
-        {lat: 19.409171, lng: -99.316886},
-        {lat: 19.409044, lng: -99.317170}
-    ];
-
-    var eB = new google.maps.Polygon({
-        paths: ebCoords,
-        strokeColor: '#000000',
-        strokeOpacity: 0.05,
-        strokeWeight: 2,
-        fillColor: '#764ba2',
-        fillOpacity: 0.65,
-        text: 'B'
-    });
-    eB.setMap(map);
-    */
 
     var dataEdificios = document.getElementById("json").innerText;
     dataEdificios.replace(" ","");
@@ -355,18 +211,34 @@ function initMap() {
         jsonE[i].coordenadas[j].lat = Number(jsonE[i].coordenadas[j].lat);
         jsonE[i].coordenadas[j].lng = Number(jsonE[i].coordenadas[j].lng);
       }
-      var ebCoords = jsonE[i].coordenadas;
+      var EdCoords = jsonE[i].coordenadas;
 
-      var eB = new google.maps.Polygon({
-          paths: ebCoords,
+      var Edificio = new google.maps.Polygon({
+          paths: EdCoords,
           strokeColor: '#000000',
           strokeOpacity: 0.05,
           strokeWeight: 2,
           fillColor: '#764ba2',
           fillOpacity: 0.65,
-          text: 'B'
+          text: jsonE[i].nombre,
+          idText: jsonE[i].id
       });
-      eB.setMap(map);
+      google.maps.event.addListener(Edificio, 'click', function (event) {
+        var vertices = this.getPath();
+        var coords = [];
+        for (var i =0; i < vertices.getLength(); i++) {
+          var xy = vertices.getAt(i);
+          coords.push({lat:""+xy.lat(), lng:""+xy.lng()});
+        }
+        document.getElementById("enombre").value = this.text;
+        document.getElementById("forEdif").value = "Modificar";
+        document.getElementById("coordI").value = JSON.stringify(coords);
+        document.getElementById("enombre").setAttribute("data-id", this.idText);
+        document.getElementById("regEdificio").setAttribute("action", "/modificaEdificio");
+        document.getElementById("dEdificio").setAttribute("style", "display: inline-block;");
+        document.getElementById("rEd").click();
+      });  
+      Edificio.setMap(map);
     }
 
     marker = new google.maps.Marker({
@@ -379,7 +251,7 @@ function initMap() {
       //drawingMode: google.maps.drawing.OverlayType.POLYGON,
       drawingControl: true,
       drawingControlOptions: {
-        position: google.maps.ControlPosition.TOP_CENTER,
+        position: google.maps.ControlPosition.TOP_RIGHT,
         drawingModes: ['polygon']
       },
       polygonOptions: {
@@ -405,6 +277,10 @@ function initMap() {
       }
       coordPlane = JSON.stringify(JSONPath);
       document.getElementById("coordI").value = coordPlane;
+      document.getElementById("enombre").value = "";
+      document.getElementById("forEdif").value = "Registrar";
+      document.getElementById("dEdificio").setAttribute("style", "display: none;");
+      document.getElementById("regEdificio").setAttribute("action", "/registraEdificio");
     });
     
 }
