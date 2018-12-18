@@ -172,19 +172,63 @@ $( function () {
             if (!coordenadas) {
                 alert("No has seleccionado un edificio");
             } else {
-                $.post($(this).attr('action'), {
-                    nombre,
-                    coordenadas
-                }, function (data) {
-                    var response = JSON.parse(data);
-                    if (response.status == "done") {
-                        // some action
-                    } 
-                    alert(response.text);
-                });
+                var action = $(this).attr('action');
+                switch (action) {
+                    case "/registraEdificio":
+                        $.post( action, {
+                            nombre,
+                            coordenadas
+                        }, function (data) {
+                            var response = JSON.parse(data);
+                            var nombre = response.text.split(" ");
+                            if (response.status == "done") {
+                                $(".horario").append(`
+                                    <option value="${response.id}">
+                                        ${nombre[1]}
+                                    </option>
+                                `);
+                            } 
+                            alert(response.text);
+                        });
+                        break;
+                    case "/modificaEdificio":
+                        var id = $("input[name='enombre']").attr("data-id");
+                        modEdificio(action, id, nombre, coordenadas);
+                        break;
+                }
             }
         }
         return false;
+    });
+
+    //Modificar Edificio
+    function modEdificio (action, id, nombre, coordenadas) {
+        $.post( action, {
+            id,
+            nombre,
+            coordenadas
+        }, function (data) {
+            var response = JSON.parse(data);
+            if (response.status == "done") {
+                var text = response.text.split(" ");
+                $(".horario option[value='" + response.id + "']").text(text[1]);
+            } 
+            alert(response.text);
+        });
+    }
+
+    //Eliminar Edificio
+    $("#dEdificio").on("click", function () {
+        var id = $("input[name='enombre']").attr("data-id");
+        $.post("/eliminaEdificio", {
+            id : id
+        }, function (data) {
+            var response = JSON.parse(data);
+            if (response.status == "done") {
+                window.location = "/"
+            }
+            alert(response.text);
+        });
     });
 
 });

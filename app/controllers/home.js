@@ -69,6 +69,18 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/usuario/:uid', (req, res, next) => {
+  var uid = req.params.uid;
+  Usuario.filter({
+    uid : Number(uid)
+  })
+  .getJoin()
+  .run()
+  .then((usuario) => {
+    res.send("Usuario: " + JSON.stringify(usuario));
+  });
+});
+
 router.post('/inicia', (req, res, next) => {
   var params = req.body;
   Usuario.filter({

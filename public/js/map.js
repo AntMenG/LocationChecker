@@ -214,14 +214,14 @@ function initMap() {
       var EdCoords = jsonE[i].coordenadas;
 
       var Edificio = new google.maps.Polygon({
-          paths: EdCoords,
-          strokeColor: '#000000',
-          strokeOpacity: 0.05,
-          strokeWeight: 2,
-          fillColor: '#764ba2',
-          fillOpacity: 0.65,
-          text: jsonE[i].nombre,
-          idText: jsonE[i].id
+        paths: EdCoords,
+        strokeColor: '#000000',
+        strokeOpacity: 0.05,
+        strokeWeight: 2,
+        fillColor: '#764ba2',
+        fillOpacity: 0.65,
+        text: jsonE[i].nombre,
+        idText: jsonE[i].id
       });
       google.maps.event.addListener(Edificio, 'click', function (event) {
         var vertices = this.getPath();
@@ -283,39 +283,9 @@ function initMap() {
       document.getElementById("forEdif").value = "Registrar";
       document.getElementById("dEdificio").setAttribute("style", "display: none;");
       document.getElementById("regEdificio").setAttribute("action", "/registraEdificio");
+
+      google.maps.event.addListener(polygon, 'click', function (event) {
+        window.location = "/";
+      });  
     });
-    // To hide:
-drawingManager.setOptions({
-  drawingControl: false
-});
-
-// To show:
-drawingManager.setOptions({
-  drawingControl: true
-});
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 19.409620, lng: -99.316517},
-    zoom: 8
-  });
-
-  var drawingManager = new google.maps.drawing.DrawingManager({
-    drawingMode: google.maps.drawing.OverlayType.MARKER,
-    drawingControl: true,
-    drawingControlOptions: {
-      position: google.maps.ControlPosition.TOP_CENTER,
-      drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-    },
-    markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-    circleOptions: {
-      fillColor: '#ffff00',
-      fillOpacity: 1,
-      strokeWeight: 5,
-      clickable: false,
-      editable: true,
-      zIndex: 1
-    }
-  });
-  drawingManager.setMap(map);
-}
 }
