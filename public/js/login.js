@@ -4,8 +4,8 @@ $(function () {
             $(this).attr('action'),
             $(this).serialize(),
             function (data) {
-                if (data == "/") {
-                    window.location = "/";
+                if (data[0] == "/") {
+                    window.location = data;
                 } else {
                     $('#log_notify').text(data);
                     $('#log_notify').css('display','inherit');

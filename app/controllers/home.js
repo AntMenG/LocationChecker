@@ -40,10 +40,7 @@ module.exports = (app) => {
 
 router.get('/', (req, res, next) => {
   var user = req.session.user;
-  if (
-    (user && user.tipo_usuario == 1) ||
-    (user && user.tipo_usuario == 2)
-  )
+  if (user && user.tipo_usuario == 1)
     //Ventana de usuario registrado
     Usuario.run().then((Usuarios) => {
       Edificio.run().then((Edificios) => {
@@ -59,6 +56,8 @@ router.get('/', (req, res, next) => {
         });
       });
     });
+  else if (user && user.tipo_usuario == 2)
+    res.redirect(`/usuario/${user.uid}`);
   else
     //Ventana de login
     Edificio.run().then((Edificios) => {
@@ -70,15 +69,34 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/usuario/:uid', (req, res, next) => {
-  var uid = req.params.uid;
-  Usuario.filter({
-    uid : Number(uid)
-  })
-  .getJoin()
-  .run()
-  .then((usuario) => {
-    res.send("Usuario: " + JSON.stringify(usuario));
-  });
+  var user = req.session.user;
+  if (user) {
+    var uid = req.params.uid;
+    Usuario.filter({
+      uid : Number(uid)
+    })
+    .getJoin()
+    .run()
+    .then((usuario) => {
+      if (usuario[0])
+        Edificio.run().then((Edificios) => {
+          res.render("usuario", {
+            title: "Location Checker | " + uid,
+            usuario: usuario[0],
+            Edificios: Edificios,
+            EdificiosStr: JSON.stringify(Edificios),
+            dias: days,
+            matutino: matutino,
+            vespertino: vespertino,
+            user: user,
+          });
+        });
+      else 
+        res.redirect("/");
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 router.post('/inicia', (req, res, next) => {
@@ -92,7 +110,11 @@ router.post('/inicia', (req, res, next) => {
           res.send("Usuario o contraseña incorrectos");
         if (response) {
           req.session.user = usuario[0];
-          res.send("/");
+          if (usuario[0].tipo_usuario == 1) {
+            res.send("/");
+          } else if (usuario[0].tipo_usuario == 2) {
+            res.send(`/usuario/${usuario[0].uid}`);
+          }
         } else {
           res.send("Usuario o contraseña incorrectos");
         }

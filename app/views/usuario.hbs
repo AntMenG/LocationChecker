@@ -1,0 +1,64 @@
+<script src="/js/cropit.js"></script>
+<script src="/js/actions.js"></script>
+{{> actions}}
+<header>
+    <div id="user">
+        <div id="title">
+            <img src="/icon/LocationCheckerTitlte.png" width="100%" alt="">
+        </div>
+        <div id="photo-space" data-pic="/upload/user_pic/{{user.id}}.jpg">
+            {{#ifeq user.photo null}}
+                <img id="photo_user" src="/upload/user_pic/avatar.jpg" alt="">
+                {{else }}
+                <img id="photo_user" src="/upload/user_pic/{{user.id}}.jpg" alt="">
+            {{/ifeq}}
+            <button id="select_photo">
+                <img src="/icon/camera.png" alt="">
+            </button>
+        </div>
+        <div id="name-space">
+            <script>
+                var name = "{{user.nombre}}";
+                var lname = "{{user.apellido}}";
+                var namepart = name.split(" ");
+                var lnamepart = lname.split(" ");
+                document.write(namepart[0] + " " + lnamepart[0]);
+            </script>
+        </div>
+        <div id="nom-space">
+            {{user.uid}}
+        </div>
+    </div>
+
+    <div id="menu">
+        {{#ifeq user.tipo_usuario 1}}
+            <button id="rEd" data-action='regEP'>Registrar Edificio</button>
+            <button data-action='regUP'>Registrar Usuario</button>
+            <button data-action='admCP'>Administrar Cuenta</button>
+        {{/ifeq}}
+    </div>
+
+    <button id="cs">
+        CERRAR SESION
+    </button>
+</header>
+
+<div id="space">
+
+    <div id="finderEmpleados">
+        <input type="text" name="find" placeholder="Buscar Empleado">
+        <button></button>
+    </div>
+
+    <div id="list-content">
+        {{usuario.nombre}} {{usuario.apellido}} <br>
+        {{usuario.uid}} <br>
+        {{#each usuario.horarios}}
+            {{dia}}
+        {{/each}}
+    </div>
+
+    <div id="map">
+    </div>
+
+</div>
